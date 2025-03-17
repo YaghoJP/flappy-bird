@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c626gf2drgxin"]
+
+[ext_resource type="Texture2D" uid="uid://q0cghfj8gn7n" path="res://player/Planes/planeRed1.png" id="1_570r3"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_g81sb"]
+[ext_resource type="Texture2D" uid="uid://wcfvmyu4tg8j" path="res://player/Planes/planeRed2.png" id="2_bwofs"]
+[ext_resource type="Texture2D" uid="uid://l1m1yptx56t" path="res://player/Planes/planeRed3.png" id="3_8a5fu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ia4nt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_570r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bwofs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8a5fu")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_inl8q"]
+radius = 44.0114
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g81sb")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ia4nt")
+animation = &"iddle"
+autoplay = "iddle"
+frame = 2
+frame_progress = 1.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(4, 1)
+shape = SubResource("CircleShape2D_inl8q")
