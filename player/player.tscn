@@ -10,6 +10,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_570r3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_570r3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_bwofs")
@@ -18,7 +26,7 @@ animations = [{
 "texture": ExtResource("3_8a5fu")
 }],
 "loop": true,
-"name": &"iddle",
+"name": &"move",
 "speed": 10.0
 }]
 
@@ -30,10 +38,8 @@ script = ExtResource("1_g81sb")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ia4nt")
-animation = &"iddle"
-autoplay = "iddle"
-frame = 2
-frame_progress = 1.0
+animation = &"move"
+autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(4, 1)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqejf74ebsjqx"
-path="res://.godot/imported/rockSnowDown.png-5dacd80ace7357cbc4625c97b5bed8fa.ctex"
+path="res://.godot/imported/rockSnowDown.png-601e1c7e87d75fbc55820cdd690cd79d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/rockSnowDown.png"
-dest_files=["res://.godot/imported/rockSnowDown.png-5dacd80ace7357cbc4625c97b5bed8fa.ctex"]
+source_file="res://obstacles/rockSnowDown.png"
+dest_files=["res://.godot/imported/rockSnowDown.png-601e1c7e87d75fbc55820cdd690cd79d.ctex"]
 
 [params]
 

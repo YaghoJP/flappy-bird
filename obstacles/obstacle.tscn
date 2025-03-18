@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://8qv6f5qj7obx"]
+
+[ext_resource type="Script" path="res://obstacles/obstacle.gd" id="1_fw1ro"]
+[ext_resource type="Texture2D" uid="uid://cqejf74ebsjqx" path="res://obstacles/rockSnowDown.png" id="1_ujw6x"]
+[ext_resource type="Texture2D" uid="uid://dtfi2ha7ihubr" path="res://obstacles/rockSnow.png" id="2_ti60l"]
+
+[node name="Obstacle" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_fw1ro")
+
+[node name="Top" type="Area2D" parent="."]
+position = Vector2(0, -250)
+
+[node name="Texture" type="Sprite2D" parent="Top"]
+texture = ExtResource("1_ujw6x")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Top"]
+polygon = PackedVector2Array(-55, -118, -26, -10, -18, -2, 7, 119, 16, 120, 28, 16, 34, 15, 41, -57, 49, -60, 55, -121)
+
+[node name="Bottom" type="Area2D" parent="."]
+position = Vector2(0, 75)
+
+[node name="Texture" type="Sprite2D" parent="Bottom"]
+texture = ExtResource("2_ti60l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom"]
+polygon = PackedVector2Array(8, -118, -55, 120, 56, 120, 15, -119)
+
+[connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
