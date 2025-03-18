@@ -39,3 +39,10 @@ func _physics_process(_delta: float) -> void:
 func rotatePlayer(_delta: float) -> void:
 	if velocity.y > 0 and rotation < deg_to_rad(90):
 		rotation += _rotationSpeed * _delta
+
+func stopMovement() -> void:
+	_shouldProcess = false
+	
+func stopGravity() -> void:
+	_gravity = 0
+	velocity = Vector2.ZERO

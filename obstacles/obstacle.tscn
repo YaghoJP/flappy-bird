@@ -18,7 +18,7 @@ texture = ExtResource("1_ujw6x")
 polygon = PackedVector2Array(-55, -118, -26, -10, -18, -2, 7, 119, 16, 120, 28, 16, 34, 15, 41, -57, 49, -60, 55, -121)
 
 [node name="Bottom" type="Area2D" parent="."]
-position = Vector2(0, 75)
+position = Vector2(0, 90)
 
 [node name="Texture" type="Sprite2D" parent="Bottom"]
 texture = ExtResource("2_ti60l")
@@ -26,5 +26,10 @@ texture = ExtResource("2_ti60l")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom"]
 polygon = PackedVector2Array(8, -118, -55, 120, 56, 120, 15, -119)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(71, -116.5)
+rect = Rect2(-10, -10, 20, 80)
+
 [connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
 [connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
