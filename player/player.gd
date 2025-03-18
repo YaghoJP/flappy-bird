@@ -8,6 +8,7 @@ signal onGameStarted
 @export var _jumpForce: float = -400
 @export var _maxSpeed: float = 400
 @export var _rotationSpeed: float = 2
+@onready var jump_audio: AudioStreamPlayer = $JumpAudio
 
 var _isStarted: bool = false
 var _shouldProcess: bool = true
@@ -18,6 +19,7 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and _shouldProcess:
 		velocity.y = _jumpForce
 		rotation = deg_to_rad(-30)
+		jump_audio.play()
 		if not _isStarted:
 			_isStarted = true
 			onGameStarted.emit()

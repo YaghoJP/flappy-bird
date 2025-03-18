@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlp8w6mpcgwn4"]
+[gd_scene load_steps=6 format=3 uid="uid://dlp8w6mpcgwn4"]
 
 [ext_resource type="Script" path="res://ground/ground.gd" id="1_nr0od"]
 [ext_resource type="Texture2D" uid="uid://cvjp578yskg1i" path="res://obstacles/groundSnow.png" id="1_ss6rb"]
+[ext_resource type="AudioStream" uid="uid://dnm5b6pojwpjl" path="res://Assets/Audio/sfx_die.wav" id="3_6d8s5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07obl"]
 size = Vector2(808, 64)
@@ -32,6 +33,11 @@ texture = ExtResource("1_ss6rb")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_w5m5j")
 debug_color = Color(0.92237, 0.0872051, 0.646267, 0.42)
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6d8s5")
+volume_db = -15.0
+bus = &"sfx"
 
 [connection signal="body_entered" from="Ground1" to="." method="_on_ground_body_entered"]
 [connection signal="body_entered" from="Ground2" to="." method="_on_ground_body_entered"]

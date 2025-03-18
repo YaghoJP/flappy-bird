@@ -3,6 +3,8 @@ class_name Ground
 
 signal  onGroundPlayerCrash
 
+@onready var game_over: AudioStreamPlayer = $GameOver
+
 @export_category("Variables")
 @export var _speed: int = -150
 
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 func _on_ground_body_entered(body: Node2D) -> void:
 	onGroundPlayerCrash.emit()
 	if body is Player:
+		game_over.play()
 		_speed = 0
 		var _playerRef = body as Player
 		_playerRef.stopMovement()
