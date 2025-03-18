@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://mwbbcf07xtpm"]
+
+[ext_resource type="LabelSettings" uid="uid://b6nop32p7vxng" path="res://UI/label_72.tres" id="1_nrbdf"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_xwhcm"]
+[ext_resource type="Texture2D" uid="uid://dhcfq1juug1ru" path="res://UI/textGetReady.png" id="3_sslmy"]
+[ext_resource type="Texture2D" uid="uid://c42nhwabeqalv" path="res://UI/tapTick.png" id="4_jm6n6"]
+
+[sub_resource type="Animation" id="Animation_u0l43"]
+resource_name = "menu"
+length = 0.3
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/StartMenu/TextureRect2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="Animation" id="Animation_2ayno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/StartMenu/TextureRect2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3h24f"]
+_data = {
+"RESET": SubResource("Animation_2ayno"),
+"menu": SubResource("Animation_u0l43")
+}
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_xwhcm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "0"
+label_settings = ExtResource("1_nrbdf")
+
+[node name="StartMenu" type="Control" parent="MarginContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/StartMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 73.0
+grow_horizontal = 2
+texture = ExtResource("3_sslmy")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -7.0
+offset_right = 29.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jm6n6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3h24f")
+}
+autoplay = "menu"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1hd0yutlceqp"]
+[gd_scene load_steps=7 format=3 uid="uid://d1hd0yutlceqp"]
 
 [ext_resource type="PackedScene" uid="uid://c626gf2drgxin" path="res://player/player.tscn" id="1_88at8"]
 [ext_resource type="Script" path="res://worlds/world.gd" id="1_p6c0e"]
 [ext_resource type="Texture2D" uid="uid://duiy5x8u0hr7r" path="res://worlds/background.png" id="2_dpwlk"]
 [ext_resource type="PackedScene" uid="uid://dlp8w6mpcgwn4" path="res://ground/ground.tscn" id="4_6xfv0"]
 [ext_resource type="PackedScene" uid="uid://ceg218kwfoog6" path="res://spawner/spawner.tscn" id="4_830x5"]
+[ext_resource type="PackedScene" uid="uid://mwbbcf07xtpm" path="res://UI/ui.tscn" id="6_grd7b"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_p6c0e")
@@ -23,6 +24,9 @@ position = Vector2(212, 348)
 [node name="Ground" parent="." instance=ExtResource("4_6xfv0")]
 position = Vector2(0, 819)
 
+[node name="UI" parent="." instance=ExtResource("6_grd7b")]
+
 [connection signal="onGameStarted" from="Player" to="." method="_on_player_on_game_started"]
 [connection signal="onObstacleCrash" from="Spawner" to="." method="_on_spawner_on_obstacle_crash"]
+[connection signal="playerScored" from="Spawner" to="." method="_on_spawner_player_scored"]
 [connection signal="onGroundPlayerCrash" from="Ground" to="." method="_on_ground_on_ground_player_crash"]

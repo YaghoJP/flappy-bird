@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci8kaqn48bw7v"
-path="res://.godot/imported/buttonSmall.png-78ea042111570d5bb5102d270db5c178.ctex"
+uid="uid://be7nyiw44n3bu"
+path="res://.godot/imported/medalSilver.png-4b04285b1acce1b06070f38146da0c70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/buttonSmall.png"
-dest_files=["res://.godot/imported/buttonSmall.png-78ea042111570d5bb5102d270db5c178.ctex"]
+source_file="res://UI/medalSilver.png"
+dest_files=["res://.godot/imported/medalSilver.png-4b04285b1acce1b06070f38146da0c70.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c42nhwabeqalv"
-path="res://.godot/imported/tapTick.png-601624fdebb94243dbb3182506dc2d42.ctex"
+uid="uid://ci8kaqn48bw7v"
+path="res://.godot/imported/buttonSmall.png-0087429333bb9f2fb8622e0564f45ced.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/tapTick.png"
-dest_files=["res://.godot/imported/tapTick.png-601624fdebb94243dbb3182506dc2d42.ctex"]
+source_file="res://UI/buttonSmall.png"
+dest_files=["res://.godot/imported/buttonSmall.png-0087429333bb9f2fb8622e0564f45ced.ctex"]
 
 [params]
 

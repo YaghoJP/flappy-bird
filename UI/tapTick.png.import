@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2akkjgeahful"
-path="res://.godot/imported/medalBronze.png-cf5f4a3c1d91c41c8ccdb060eb5b477e.ctex"
+uid="uid://c42nhwabeqalv"
+path="res://.godot/imported/tapTick.png-b7fc847dc0957da449f32a19f53e8b66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/medalBronze.png"
-dest_files=["res://.godot/imported/medalBronze.png-cf5f4a3c1d91c41c8ccdb060eb5b477e.ctex"]
+source_file="res://UI/tapTick.png"
+dest_files=["res://.godot/imported/tapTick.png-b7fc847dc0957da449f32a19f53e8b66.ctex"]
 
 [params]
 

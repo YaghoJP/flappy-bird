@@ -22,15 +22,16 @@ func _process(delta: float) -> void:
 	ground_2.global_position.x += _speed * delta
 	
 	
-	if ground_1.global_position.x < -_width / 2:
+	if ground_1.global_position.x < -int(_width / 2):
 		ground_1.global_position.x = ground_2.global_position.x + _width
-	if ground_2.global_position.x < -_width / 2:
+	if ground_2.global_position.x < -int(_width / 2):
 		ground_2.global_position.x = ground_1.global_position.x + _width
 
 
 func _on_ground_body_entered(body: Node2D) -> void:
 	onGroundPlayerCrash.emit()
-	_speed = 0
-	var _playerRef = body as Player
-	_playerRef.stopMovement()
-	_playerRef.stopGravity()
+	if body is Player:
+		_speed = 0
+		var _playerRef = body as Player
+		_playerRef.stopMovement()
+		_playerRef.stopGravity()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i226rtrqfqpn"
-path="res://.godot/imported/textGameOver.png-58f2ed92f164c03dcace6d77a2a78bd5.ctex"
+uid="uid://c5q8rpg33holx"
+path="res://.godot/imported/medalGold.png-d1c7679fefdfadd99a73ba232c942627.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/textGameOver.png"
-dest_files=["res://.godot/imported/textGameOver.png-58f2ed92f164c03dcace6d77a2a78bd5.ctex"]
+source_file="res://UI/medalGold.png"
+dest_files=["res://.godot/imported/medalGold.png-d1c7679fefdfadd99a73ba232c942627.ctex"]
 
 [params]
 
