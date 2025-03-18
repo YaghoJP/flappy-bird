@@ -1,11 +1,19 @@
 extends CanvasLayer
 class_name UI
 
-@onready var label: Label = %Label
-@onready var start_menu: Control = $MarginContainer/StartMenu
+@onready var scoreLabel: Label = %ScoreLabel
+@onready var startMenu: Control = $MarginContainer/StartMenu
+@onready var gameOverContainer: VBoxContainer = %GameOver
 
 func _ready() -> void:
-	label.text = "0"
+	scoreLabel.text = "0"
 
 func updateScore(_points: int) -> void:
-	label.text = str(_points)
+	scoreLabel.text = str(_points)
+
+func gameOver() -> void:
+	gameOverContainer.show()
+	scoreLabel.hide()
+
+func _on_ok_button_pressed() -> void:
+	get_tree().reload_current_scene()
