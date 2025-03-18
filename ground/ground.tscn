@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlp8w6mpcgwn4"]
+
+[ext_resource type="Script" path="res://ground/ground.gd" id="1_nr0od"]
+[ext_resource type="Texture2D" uid="uid://cvjp578yskg1i" path="res://obstacles/groundSnow.png" id="1_ss6rb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07obl"]
+size = Vector2(808, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5m5j"]
+size = Vector2(808, 64)
+
+[node name="Ground" type="Node2D"]
+script = ExtResource("1_nr0od")
+
+[node name="Ground1" type="Area2D" parent="."]
+position = Vector2(404, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground1"]
+texture = ExtResource("1_ss6rb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_07obl")
+
+[node name="Ground2" type="Area2D" parent="."]
+position = Vector2(1212, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+texture = ExtResource("1_ss6rb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_w5m5j")
+debug_color = Color(0.92237, 0.0872051, 0.646267, 0.42)
+
+[connection signal="body_entered" from="Ground1" to="." method="_on_ground_body_entered"]
+[connection signal="body_entered" from="Ground2" to="." method="_on_ground_body_entered"]
