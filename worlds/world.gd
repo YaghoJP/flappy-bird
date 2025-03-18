@@ -1,4 +1,6 @@
 extends Node2D
 
+@onready var spawner: Spawner = $Spawner
+
 func _on_player_on_game_started() -> void:
-	pass # Replace with function body.
+	spawner.timer.start()

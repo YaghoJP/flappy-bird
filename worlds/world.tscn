@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c626gf2drgxin" path="res://player/player.tscn" id="1_88at8"]
 [ext_resource type="Script" path="res://worlds/world.gd" id="1_p6c0e"]
 [ext_resource type="Texture2D" uid="uid://duiy5x8u0hr7r" path="res://worlds/background.png" id="2_dpwlk"]
-[ext_resource type="PackedScene" uid="uid://8qv6f5qj7obx" path="res://obstacles/obstacle.tscn" id="4_b3rka"]
+[ext_resource type="PackedScene" uid="uid://ceg218kwfoog6" path="res://spawner/spawner.tscn" id="4_830x5"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_p6c0e")
@@ -15,9 +15,8 @@ texture = ExtResource("2_dpwlk")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("1_88at8")]
-position = Vector2(212, 312)
+position = Vector2(212, 348)
 
-[node name="Obstacle" parent="." instance=ExtResource("4_b3rka")]
-position = Vector2(393, 546)
+[node name="Spawner" parent="." instance=ExtResource("4_830x5")]
 
 [connection signal="onGameStarted" from="Player" to="." method="_on_player_on_game_started"]
