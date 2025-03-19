@@ -9,6 +9,7 @@ signal onGameStarted
 @export var _maxSpeed: float = 400
 @export var _rotationSpeed: float = 2
 @onready var jump_audio: AudioStreamPlayer = $JumpAudio
+@onready var texture: AnimatedSprite2D = $Texture
 
 var _isStarted: bool = false
 var _shouldProcess: bool = true
@@ -22,6 +23,7 @@ func _physics_process(_delta: float) -> void:
 		jump_audio.play()
 		if not _isStarted:
 			_isStarted = true
+			texture.play("move")
 			onGameStarted.emit()
 	
 	if not _isStarted:
